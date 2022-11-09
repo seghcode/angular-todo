@@ -1,14 +1,16 @@
 <form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+  <h4 *ngIf="message" [ngStyle]="{ 'text-align': 'center', 'color': 'white', background: 'teal' }">added succesfully <button
+      (click)="removeMessage()" class="close-btn" >X</button> </h4>
+
   <div class="form-control">
     <label for="title">Title</label>
     <input type="text" id="title" name="title" [(ngModel)]="title" placeholder="Add Title" required />
   </div>
   <div class="form-control">
     <label for="description">Description</label>
-    <input type="text" id="description"  name="description" [(ngModel)]="description" placeholder="Add Description" required />
+    <input type="text" id="description" name="description" [(ngModel)]="description" placeholder="Add Description"
+      required />
   </div>
-  <button class="btn btn-block" >ADD TODO</button>
-
-  <h4 *ngIf="onSubmit" [ngStyle]="{ 'text-align': 'center', 'color': 'green' }">{{message}}</h4>
+  <button class="btn btn-block">ADD TODO</button>
 
 </form>

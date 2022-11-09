@@ -1,3 +1,12 @@
-.add-form{
-    margin-bottom: 20px;
+.add-form {
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background: red;
+  border-radius: 200px;
+  margin: 5px;
 }

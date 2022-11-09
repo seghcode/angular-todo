@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
-import {Subscription} from 'rxjs'
+import { Subscription } from 'rxjs';
 import { Task } from 'src/app/Task';
-
 
 @Component({
   selector: 'app-add-task',
@@ -16,14 +15,13 @@ export class AddTaskComponent implements OnInit {
   description: string = '';
   uid: any;
   completed: boolean = false;
-  message = ''
+  message: boolean = false;
 
   // for toggling the form
-  showAddTask!: boolean
-  subscription: Subscription
+  showAddTask!: boolean;
+  subscription: Subscription;
 
-
-  constructor(private uiService:UiService) {
+  constructor(private uiService: UiService) {
     this.subscription = this.uiService.onToggle().subscribe({
       next: (value) => (this.showAddTask = value),
     });
@@ -57,8 +55,12 @@ export class AddTaskComponent implements OnInit {
       completed: this.completed,
     };
     this.onAddTodo.emit(newTask);
-    this.message = 'Added Successfully'
+    this.message = true;
     this.title = '';
     this.description = '';
+  }
+
+  removeMessage() {
+    this.message = false;
   }
 }
