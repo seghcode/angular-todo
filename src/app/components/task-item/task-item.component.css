@@ -1,0 +1,37 @@
+.task {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.task-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.completed {
+  border-left: 5px solid green;
+}
+
+.task h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-cancel{
+  background: red;
+  padding: 5px !important;
+}
+.btn-save{
+  background: blue;
+  padding: 5px ;
+
+}
+.update-form input{
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+}

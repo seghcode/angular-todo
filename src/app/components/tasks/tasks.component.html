@@ -1,0 +1,6 @@
+<!-- *ngIf="task.length" -->
+<app-add-task (onAddTodo)="addTodo($event)" ></app-add-task>
+
+<h4 *ngIf="tasks.length < 1">No task Available yet</h4>
+<app-task-item *ngFor="let task of tasks" [task]="task" (onDeleteTask)="deleteTask(task)"
+  (onToggleCompleted)="toggleCompleted(task)" (onUpdateTask)="updateTask($event)"></app-task-item>

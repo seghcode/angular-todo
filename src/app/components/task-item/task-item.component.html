@@ -1,0 +1,27 @@
+<div class="task" [ngClass]="{completed: task.completed}" (dblclick)="onToggle(task) ">
+  <div class="task-flex">
+    <div>
+      <h3>
+        {{task.title}}
+      </h3>
+      <p>
+        {{task.description}}
+      </p>
+    </div>
+    <div>
+      <fa-icon (click)="onDelete(task)" [icon]="faTrash" [ngStyle]="{'color': 'red', 'padding-right':'8px'}"></fa-icon>
+      <fa-icon *ngIf="!editable" [icon]="faPen" [ngStyle]="{'color': 'blue'}" (click)="editable = !editable"></fa-icon>
+    </div>
+  </div>
+  <div *ngIf="editable">
+    <div class="update-form">
+      <input class="sm-text-input" placeholder="edit title" [value]="task.title" #editedTitle>
+      <input class="sm-text-input" placeholder="edit descriptin" [value]="task.description" #editedDescription>
+    </div>
+
+    <div class="btn-wrapper">
+      <button class="btn btn-cancel" (click)="editable = !editable">Cancel</button>
+      <button class="btn btn-save" (click)="onUpdate(editedTitle.value,editedDescription.value)">Update</button>
+    </div>
+  </div>
+</div>
